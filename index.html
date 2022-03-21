@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+ <style>
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+     *{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         text-decoration: none;
+         list-style: none;
+         font-family: 'Poppins', sans-serif;
+         color: white;
+     }
+     header{
+         width: 100%;
+         padding: 20px; 
+         background-color: #21243d;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+     }
+     header .logo{
+         display: flex;
+         align-items: center;
+     }
+     header .logo img{
+         width: 100px;
+         filter: invert(1);
+     }
+     header ,logo h2{
+         color: white;
+         font-weight: 600;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+     }
+     header ul{
+         display: flex;
+     }
+     header ul li{
+         margin: 0px 12px;
+     }
+     header ul li a{
+         text-transform: capitalize;
+         padding: 4px 10px;
+         transition-duration: 2s;
+     }
+     header ul li a:hover{
+         background-color: white;
+         color: #21243d;
+     }
+     .banner{
+         width: 100%;
+         height: 80vh;
+         background: url(Images/banner.jpg);
+         background-size: cover;
+         padding: 150px 100px;
+        
+     }
+     .banner .banner content{
+         width: 60%;
+         
+     }
+     .banner .banner content h2{
+         color: white;
+         font-size: 4em;
+     }
+     .banner .banner content p{
+         color: white;
+         font-weight: 300;
+         font-size: 18px;
+     }
+     .banner .bannercontent button{
+         padding: 8px 20px;
+         background-color: #21243d;
+         color: white;
+         font-size: 20px;
+         text-transform: uppercase;
+         margin-top: 10px;
+         border: none;
+         border-radius: 20px;
+         letter-spacing: 1px;
+     } 
+     .menu{
+         width: 100%;
+         padding: 70px;
+         background-color: #21243d;
+         text-align: center;
+     }
+     .menu.title{
+         text-align: center;
+     }
+     .menu .title h2{
+         font-size: 3em;
+     }
+     .menu .title p{
+         color: white;
+         
+     }
+     .menu .menucards{
+         width: 100%;
+         margin-top: 40px;
+         display: flex;
+         justify-content: space-between;
+     }
+     .menu .menucards .box{
+      width: 300px;
+     }
+     .menu .menucards .box img{
+         width: 280px;
+         height: 280px;
+         border-radius: 50%;
+
+     }
+     .menu .menucards .box h2{
+         text-transform: capitalize;
+         font-weight: 600;
+         letter-spacing: 2px;
+
+         color: wheat;
+     }
+     .menu .menucards .box p{
+         margin-top: 5px;
+         color: white;
+         font-weight: 300;
+     }
+     .order{
+         width: 100%;
+         padding: 70px 100px;
+         background-color: #f5b237;
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+     }
+     .order .leftside{
+         width: 50%;
+        }
+        .order .leftside img{
+            width: 350px;
+            border-radius: 50%;
+     }
+     .order .rightside{
+         width: 50%;
+     }
+     .order .rightside h2{
+         text-transform: capitalize;
+         font-size: 3.5em;
+     }
+     .order .rightside p{
+         margin-top: 10px 0px;
+     }
+     .order .rightside button{
+    padding: 8px 20px;
+    background-color: #21243d;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    margin-top: 10px;
+     }
+     .state{
+         width: 100%;
+         padding: 70px;
+         background-color: #21243d;
+         text-align: center;
+     }
+     .state .title{
+         text-align: center;
+
+     }
+     .state .title h2{
+         font-size: 3em;
+         color: white;
+         text-transform: capitalize;
+         font-weight: 600;
+     }
+     .state .title p{
+         color: white;
+     }
+     .state .statecard{
+         width: 100%;
+         margin-top: 40px;
+         display: flex;
+         justify-content: space-between;
+     }
+     .state .statecard .box{  
+         width: 300px;
+         height: 300px;
+         border-radius: 50%;
+         border: 1px solid #fff;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+     }
+     .state .statecard .box h2{
+         color: #fff;
+         font-size: 3em;
+     }
+     .state .statecard .box h3{
+         font-size: 3em;
+         color: #fff;
+         font-weight: 500;
+         text-transform: uppercase ;
+     }
+     .feedback{
+         width: 100%;
+         padding: 70px;
+         display: flex;
+         background-size: cover;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         background:linear-gradient(90deg, rgba(33,36,61,1) 0%, rgba(33,36,61,0.7) 35%, rgba(0,212,255,0.7) 100%), url(Images/image-4.jpg)
+
+     }
+     .feedback img{
+         width: 240px;
+         height: 250px;
+         border-radius: 50%;
+     }
+     .feedback p{
+         color: white;
+         font-size: 18px;
+         font-weight: 300;
+         margin-bottom: 10px;
+         text-align: center;
+     }
+     .feedback h2{
+          color: white;
+          margin-top: 10px;
+          font-size: 2em;
+          text-transform: capitalize;
+     }
+     .subscribe{
+         width: 100%;
+         padding: 70px;
+         background-color: #ffd17e;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         text-align: center;
+     }
+     .subscribe .title h2{
+         font-size: 3em;
+         text-transform: capitalize;
+         font-weight: 700;
+         
+     }
+     .subscribe .searchbox{
+         width: 500px;
+         height: 60px;
+         background-color: white;
+         border-radius: 40px;
+         display: flex;
+         margin-top: 15px;
+     }
+     .subscribe .searchbox input{
+         background-color: transparent;
+         border: none;
+         outline: none;
+         width: 80%;
+         border-radius: 40px;
+         padding-left: 10px;
+     }
+     .subscribe .searchbox button{
+         background-color: red;
+         border-radius: 40px;
+         color: #fff;
+         text-transform: capitalize;
+         font-size: 18px;
+         width: 170px;
+         border: none;
+         font-weight: 600;
+         letter-spacing: 1px;
+     }
+     footer{
+         padding: 50px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         background-color: #21243d;
+     }
+     footer .sec{
+         width: 400px;
+     }
+     footer .sec h2{
+         color: #fff;
+         font-size: 2em;
+         font-weight: 600;
+         text-transform: capitalize;
+     }
+     footer .sec p{
+         color: #fff;
+         margin-top: 15px;
+     }
+     footer .sec img{
+         width: 50px;
+         margin: 15px 8px;
+         filter: invert(1);
+     }
+     
+     footer .sec1 h2{
+        color: #fff;
+         font-size: 2em;
+         font-weight: 600;
+         text-transform: capitalize;
+     }
+     footer .sec1 ul li{
+         color: #fff;
+         margin: 12px 0px;
+         text-transform: capitalize;
+         font-size: 16px;
+     }
+
+     
+ </style>  
+</head>
+<body>
+  <header>
+      <div class="logo">
+          <img src="Images/logo.png" alt="logo">
+          <h2>Website logo</h2>
+      </div>
+      <ul>
+          <li><a ref="">Home</a></li>
+          <li><a ref="">Product</a></li>
+          <li><a ref="">Promo</a></li>
+          <li><a ref="">About</a></li>
+          <li><a ref="">Contect</a></li>
+      </ul>
+      <div class="icons">
+      <i class="fa fa.search"></i> 
+
+      </div>
+  </header>  
+  <section class="banner">
+<div class="bannercontent">
+    <h2>title here</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, necessitatibus mollitia quod possimus totam consequatur. Alias sunt ullam,
+        recusandae nulla optio in saepe ducimus dolor molestiae dolorum similique labore illum blanditiis iste culpa tenetur exercitationem amet, quia rem.</p>
+    <button>Order Now </button>
+
+</div>
+  </section>
+ <section class="menu">
+    <div class="title">
+        <h2>popular menu</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia, saepe!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, quibusdam.</p>
+    </div>
+    <div class="menucards">
+        <div class="box">
+            <img src="Images/image-1.jpg" alt="">
+            <h2>title here</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        </div>
+        <div class="box">
+            <img src="Images/image-2.jpg" alt="">
+            <h2>title here</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        </div>
+        <div class="box">
+            <img src="Images/image-3.jpg" alt="">
+            <h2>title here</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        </div>
+    </div>
+ </section>
+ <section class="order">
+  <div class="leftside">
+      <img src="Images/image-1.jpg" alt="pic">
+  </div>
+<div class="rightside">
+    <h2>Your title here</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium sint delectus dolore, ipsam veritatis 
+        suscipit optio eos. Dolorum similique, aspernatur
+        accusamus earum expedita modi facere distinctio? Delectus doloremque quis quam.</p>
+    <button>Order Now</button>    
+</div>
+ </section>
+ <section class="state">
+     <div class="title">
+         <h2>Statistics</h2>
+         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, quis.</p>
+         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, non.</p>
+     </div>
+     <div class="statecard">
+         <div class="box">
+             <h2>123</h2>
+             <h3>Stors</h3>
+         </div>
+         <div class="box">
+            <h2>100</h2>
+            <h3>menu</h3>
+        </div>
+        <div class="box">
+            <h2>200</h2>
+            <h3>chef</h3>
+        </div>
+     </div>
+ </section>
+ </section>
+ <section class="order">
+   
+  <div class="rightside">
+      <h2>Your title here</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium sint delectus dolore, ipsam veritatis 
+          suscipit optio eos. Dolorum similique, aspernatur
+          accusamus earum expedita modi facere distinctio? Delectus doloremque quis quam.</p>
+      <button>Order Now</button>    
+  </div>
+  <div class="leftside">
+    <img src="Images/image-2.jpg" alt="pic">
+</div>
+   </section>
+   <section class="feedback">
+       <img src="Images/person.jpg" alt="">
+       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, corporis aliquam animi repudiandae perferendis voluptatibus tenetur, 
+           aliquid esse nihil quam voluptatem, nulla beatae maiores odio? Qui ipsa nobis commodi molestiae in voluptates assumenda totam pariatur dicta dolorum.
+            Nostrum exercitationem rerum voluptatibus, earum blanditiis in
+            reprehenderit dolor, placeat consequatur dolore corrupti, ducimus aperiam cupiditate sunt commodi!</p>
+       <h2>Customer name</h2>
+   </section>
+   <section class="subscribe">
+    <div class="title">
+        <h2>your title here</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, officiis.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit quos quibusdam iusto!</p>
+    </div>
+    <div class="searchbox">
+        <input type="text" placeholder="𝙎𝙚𝙖𝙧𝙘𝙝">
+        <button>Subscribe</button>
+    </div>   
+   </section>
+   <footer>
+       <div class="sec">
+           <h2>title here</h2>
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, quidem. Perferendis
+                inventore molestias distinctio dolor error blanditiis
+                modi voluptates magni! Fugiat repellendus accusantium ea aliquam.</p>
+                <img src="Images/facebook.png" alt="">
+                <img src="Images/twitter.png" alt="">
+                <img src="Images/instagram.png" alt="">
+                <img src="Images/whatsapp.png" alt="">
+               
+       </div>
+       <div class="sec1">
+           <h2>About us</h2>
+           <ul>
+               <li>History</li>
+               <li>Over team</li>
+               <li>brand guidline</li>
+               <li>terms & condition</li>
+               <li>privacy policy</li>
+           </ul>
+       </div>
+       <div class="sec1">
+        <h2>Services</h2>
+        <ul>
+            <li>History</li>
+            <li>Over team</li>
+            <li>brand guidline</li>
+            <li>terms & condition</li>
+            <li>privacy policy</li>
+        </ul>
+    </div>
+    <div class="sec1">
+        <h2>Other</h2>
+        <ul>
+            <li>History</li>
+            <li>Over team</li>
+            <li>brand guidline</li>
+            <li>terms & condition</li>
+            <li>privacy policy</li>
+        </ul>
+    </div>
+       
+   </footer>
+</body>
+</html>
